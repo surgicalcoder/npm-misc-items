@@ -1,0 +1,10 @@
+{
+    "name": "surgicalcoder-misc-items",
+    "version": "0.0.2",
+    "peerDependencies": {
+        "@angular/core": "^2.4.0",
+        "reflect-metadata": "^0.1.8",
+        "rxjs": "^5.0.1",
+        "zone.js": "^0.7.2"
+    }
+}
