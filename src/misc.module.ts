@@ -5,12 +5,7 @@ import { AuthGuard } from './auth.guard';
 
 @NgModule({
 	imports: [CommonModule],
-	providers: [
-		{ provide: SecurityService }
-	],
-
-	 declarations: [AuthGuard],
-	exports: [AuthGuard]
+	providers: [SecurityService]
 })
 
 export class MiscModule { }
