@@ -1,6 +1,6 @@
 {
     "name": "surgicalcoder-misc-items",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "scripts": {
         "clean": "rimraf .tmp && rimraf dist",
         "transpile": "ngc",

@@ -10,25 +10,31 @@ import * as import1 from '../../src/misc.module';
 import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '@angular/common/src/localization';
 import * as import4 from '../../src/SecurityService';
-import * as import5 from '@angular/core/src/di/injector';
-import * as import6 from '@angular/core/src/i18n/tokens';
-import * as import7 from '@angular/http/src/http';
-import * as import8 from '@angular/router/src/router';
+import * as import5 from '../../src/auth.guard';
+import * as import6 from '@angular/core/src/di/injector';
+import * as import7 from '@angular/core/src/i18n/tokens';
+import * as import8 from '@angular/http/src/http';
+import * as import9 from '@angular/router/src/router';
 class MiscModuleInjector extends import0.NgModuleInjector<import1.MiscModule> {
   _CommonModule_0:import2.CommonModule;
   _MiscModule_1:import1.MiscModule;
   __NgLocalization_2:import3.NgLocaleLocalization;
   __SecurityService_3:import4.SecurityService;
-  constructor(parent:import5.Injector) {
+  __AuthGuard_4:import5.AuthGuard;
+  constructor(parent:import6.Injector) {
     super(parent,([] as any[]),([] as any[]));
   }
   get _NgLocalization_2():import3.NgLocaleLocalization {
-    if ((this.__NgLocalization_2 == null)) { (this.__NgLocalization_2 = new import3.NgLocaleLocalization(this.parent.get(import6.LOCALE_ID))); }
+    if ((this.__NgLocalization_2 == null)) { (this.__NgLocalization_2 = new import3.NgLocaleLocalization(this.parent.get(import7.LOCALE_ID))); }
     return this.__NgLocalization_2;
   }
   get _SecurityService_3():import4.SecurityService {
-    if ((this.__SecurityService_3 == null)) { (this.__SecurityService_3 = new import4.SecurityService(this.parent.get(import7.Http),this.parent.get(import8.Router))); }
+    if ((this.__SecurityService_3 == null)) { (this.__SecurityService_3 = new import4.SecurityService(this.parent.get(import8.Http),this.parent.get(import9.Router))); }
     return this.__SecurityService_3;
+  }
+  get _AuthGuard_4():import5.AuthGuard {
+    if ((this.__AuthGuard_4 == null)) { (this.__AuthGuard_4 = new import5.AuthGuard(this.parent.get(import9.Router),this._SecurityService_3)); }
+    return this.__AuthGuard_4;
   }
   createInternal():import1.MiscModule {
     this._CommonModule_0 = new import2.CommonModule();
@@ -40,6 +46,7 @@ class MiscModuleInjector extends import0.NgModuleInjector<import1.MiscModule> {
     if ((token === import1.MiscModule)) { return this._MiscModule_1; }
     if ((token === import3.NgLocalization)) { return this._NgLocalization_2; }
     if ((token === import4.SecurityService)) { return this._SecurityService_3; }
+    if ((token === import5.AuthGuard)) { return this._AuthGuard_4; }
     return notFoundResult;
   }
   destroyInternal():void {
