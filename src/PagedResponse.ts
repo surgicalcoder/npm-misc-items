@@ -2,9 +2,9 @@
 import { Http, Response } from '@angular/http';
 
 export interface PagedResponse<T> {
-    page: number;
-    total: number;
-    data: T[];
+    Page: number;
+    Total: number;
+    Data: T[];
 }
 
 export interface MongoRef<T> {
@@ -15,9 +15,9 @@ export interface MongoRef<T> {
 export function mapPaged<T>(response: Response): PagedResponse<T> {
     let r$ = response.json();
     let pr = <PagedResponse<T>>({
-        page: r$.Page,
-        total: r$.Total,
-        data: r$.Data
+        Page: r$.Page,
+        Total: r$.Total,
+        Data: r$.Data
     });
     return pr;
 }
@@ -31,5 +31,5 @@ export function mapItems<T>(response: Response): T[] {
 }
 
 export function toItem<T>(r: any): T {
-    return Object.assign({} as T, r);
+    return Object.assign(<T>{}, r);
 }
