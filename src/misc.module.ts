@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SecurityService } from './SecurityService';
+import {CommonModule} from '@angular/common'
 import { AuthGuard } from './auth.guard';
 
 @NgModule({
 	imports: [CommonModule],
-	providers: [SecurityService, AuthGuard]
+	providers: [AuthGuard]
 })
 
 export class MiscModule { }
