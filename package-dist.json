@@ -1,6 +1,6 @@
 {
     "name": "surgicalcoder-misc-items",
-    "version": "0.0.8",
+    "version": "0.1.0",
     "peerDependencies": {
         "@angular/core": "^2.4.0",
         "reflect-metadata": "^0.1.8",
