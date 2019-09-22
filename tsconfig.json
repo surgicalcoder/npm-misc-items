@@ -5,7 +5,7 @@
         "stripInternal": true,
         "experimentalDecorators": true,
         "strictNullChecks": false,
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "module": "es6",
         "moduleResolution": "node",
         "paths": {
